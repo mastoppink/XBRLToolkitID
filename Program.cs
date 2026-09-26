@@ -6,8 +6,13 @@ namespace XBRLToolkitID
   {
     static void Main(string[] args)
     {
-      var files = ScannerInstance.Scan("./IDX_Reports");
-      XbrlExtractor.Extract(files.First());
+      TaxonomyElement.Instance.Load("./taxonomy/cor-element2020.xsd"); // loading taxonomy concept
+
+      // var files = ScannerInstance.Scan("./IDX_Reports");
+      // XbrlExtractor.Extract(files.First());
+
+      var AssetConcept = TaxonomyElement.Instance.GetByName("Assets");
+      Console.WriteLine($"Assets: {AssetConcept?.ToString()}");
     }
   }
 }
