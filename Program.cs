@@ -11,7 +11,7 @@ namespace XBRLToolkitID
       // var files = ScannerInstance.Scan("./IDX_Reports");
       // XbrlExtractor.Extract(files.First());
 
-      var AssetConcept = TaxonomyElement.Instance.GetByName("Assets");
+      var AssetConcept = TaxonomyElement.Instance.GetByName("Liabilities");
       Console.WriteLine($"Assets: {AssetConcept?.ToString()}");
     }
   }
